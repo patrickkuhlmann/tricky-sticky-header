@@ -1,0 +1,12 @@
+/* Store.css */
+.sticky-header {
+  /* Enable sticky behavior for the entire header */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+}
+
+.main-header-visible {
+  display: none;
+}
