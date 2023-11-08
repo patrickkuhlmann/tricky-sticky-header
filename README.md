@@ -28,4 +28,4 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-# tricky-sticky-header-joao
+# tricky-sticky-header
