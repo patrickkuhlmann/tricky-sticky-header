@@ -7,10 +7,7 @@ Spec:
 
 - When the header re-appears, it shall push down the content (Product) sticky header.
 - When the scrolling direction is downwards, it shall disappear.
-- There shall be no visisble gaps between the disappearing header & the sticky header.
-
-Bonus:
-
+- There shall be no visisble gaps between the disappearing header & the sticky header-
 - Virtualize the product list with [react-virtualized](https://github.com/bvaughn/react-virtualized)
 
 ## Development server
