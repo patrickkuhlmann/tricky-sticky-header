@@ -1,12 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export function useScrollDirection() {
+export const Direction = {
+	Up: 'up',
+	Down: 'down'
+} as const
 
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(
-    null
-  );
+export type DirectionKeys = typeof Direction[keyof typeof Direction]
 
-    //TODO: implement
+export const useScrollDirection = () => {
+	const [scrollDirection, setScrollDirection] = useState<DirectionKeys | null>(null)
+	useEffect(() => {
+		let lastY = 0
+		const handleScroll = () => {
+			if (window.scrollY < lastY) setScrollDirection(Direction.Up)
+			if (window.scrollY > lastY) setScrollDirection(Direction.Down)
+			lastY = window.scrollY
+		}
 
-  return scrollDirection;
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
+
+	return scrollDirection;
 }
